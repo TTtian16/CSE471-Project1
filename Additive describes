@@ -1,0 +1,40 @@
+The **AdditiveSynthesizer** component is responsible for generating audio output using additive synthesis. This component synthesizes complex sounds by combining multiple sine waves (harmonics) at different frequencies, amplitudes, and phases. It is designed to support various features such as vibrato, amplitude envelope (ADSR), and polyphony, making it a versatile component for audio synthesis.
+
+The **AdditiveSynthesizer** consists of two main classes:
+
+1. **CAdditiveSynthesizer**: This class controls the overall synthesis process, including handling ADSR (Attack, Decay, Sustain, Release) envelope generation and managing polyphony. It uses an instance of `CAdditiveSineWave` to produce individual waveforms based on the note's properties.
+2. **CAdditiveSineWave**: This class generates the raw audio samples for each harmonic. It also handles vibrato and frequency modulation, as well as sample overflow protection through the `catchOverflow` function.
+
+Code Ownership
+This component was developed by Xinyu Tian.
+
+ Detailed Functioning
+
+1. **Sinusoid Playback on Demand** (10 points):
+   - The `CAdditiveSineWave::Generate()` function generates audio samples by computing the value of multiple sine waves, representing harmonics of the main frequency. Each sine wave is added together to form a single, complex waveform.
+   - This playback is initiated whenever the sequencer triggers a note, producing sinusoidal waves based on the specified frequency.
+
+2. **Definition of All Harmonics** (20 points):
+   - The `CAdditiveSineWave` class defines up to eight harmonics for each note. The amplitude of each harmonic can be specified in the score file, allowing the user to customize the harmonic profile of each note.
+   - During synthesis, each harmonic frequency is calculated as an integer multiple of the base frequency, and the amplitude is scaled by the provided harmonic profile.
+
+3. **Envelope Generation (ADSR)** (30 points):
+   - The **ADSR envelope** (Attack, Decay, Sustain, Release) is implemented in the `CAdditiveSynthesizer::Generate()` function. The `factor` variable adjusts the output amplitude of each sample based on the current phase of the envelope.
+   - `m_attack`, `m_decay`, `m_sustain`, and `m_release` are set based on the note properties from the score file, controlling the dynamics of the sound.
+
+4. **Polyphony** (35 points):
+   - **Polyphony** is supported by maintaining a list of active instruments (`m_instruments`). Each instance of `CAdditiveSynthesizer` represents a single note, and multiple notes can be generated simultaneously by managing this list.
+   - This allows multiple notes to play at once, enabling the component to produce chords and complex textures.
+
+5. **Sound Cross-Fading** (40 points):
+   - Cross-fading between sounds is controlled by the `m_crossFadeIn` and `m_crossFadeOut` parameters. These parameters allow smooth transitions between different sounds by gradually adjusting the amplitude at the start (`crossFadeIn`) and end (`crossFadeOut`) of the note's duration.
+   - The `CAdditiveSynthesizer::SetCrossFadeIn()` and `SetCrossFadeOut()` methods handle this functionality by applying cross-fade factors to the amplitude.
+
+6. **Vibrato** (50 points):
+   - The **vibrato** effect is implemented in the `CAdditiveSineWave` class. The frequency of the main sine wave is modulated by a low-frequency oscillation (`vibratoRate` and `vibratoFreq`), creating periodic pitch fluctuations.
+   - This effect is achieved by updating the `mainPhase` variable with a frequency that oscillates according to the sine of `vibratoPhase`. This modulation adds expressiveness and a "wavy" characteristic to the sound.
+
+
+
+
+
