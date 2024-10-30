@@ -1,0 +1,77 @@
+Component: Compression
+Description of Functionality
+
+The Compression component reduces the dynamic range of an audio signal by lowering the volume of louder parts while keeping quieter parts unchanged. This helps to balance the audio signal, making the sound more consistent. The Compression component operates on both left and right channels and applies a threshold and ratio to control the degree of compression.
+
+Threshold: Determines the level above which compression begins.
+Ratio: Defines how much to reduce the signal above the threshold. A higher ratio leads to stronger compression.
+Wet/Dry Mix: The component supports blending the compressed (wet) and original (dry) signals for a more flexible output.
+Code Explanation
+
+Process(double* frameIn, double* frameOut): This function compresses the audio signal by checking if each sample in frameIn exceeds m_threshold. If it does, it applies compression based on m_ratio. The resulting signal is blended with the original signal according to m_wet and m_dry values.
+XmlLoad(IXMLDOMNode* xml): This function reads XML settings for the threshold, wet/dry mix, and compression ratio, allowing external configuration.
+Supported Grading Elements
+
+10 - Component passes audio: Audio is passed through and compressed based on the threshold.
+20 - 1 Effect: Compression is applied as a standalone effect.
+
+
+Component: Flanging
+Description of Functionality
+
+The Flanging effect creates a sweeping, jet-like sound by mixing a delayed version of the audio signal with the original. This delay is modulated over time, giving a dynamic, moving quality to the sound. Key parameters include delay, modulation rate, and wet/dry mix.
+
+Delay: Base delay time for the effect.
+Modulation Rate and Range: Controls the speed and depth of the delay modulation, creating the sweeping effect.
+Wet/Dry Mix: Allows blending of the flanged signal with the original signal.
+Code Explanation
+
+Process(double* frameIn, double* frameOut): This function applies the flanging effect by modulating the delay using a sine wave (m_modulationRate). It uses a circular buffer (m_queueL, m_queueR) to implement the delay and mixes the delayed signal with the original according to m_wet and m_dry.
+XmlLoad(IXMLDOMNode* xml): Reads XML settings for delay, modulation, wet/dry mix, and level, allowing control over the effect’s parameters.
+Supported Grading Elements
+
+30 - 3 Effects: Flanging is one of the required effects in the list of three or more.
+40 - Controllable effects send: Allows control over modulation rate, range, and wet/dry balance.
+
+
+
+Component: Chorus
+Description of Functionality
+
+The Chorus effect simulates the sound of multiple voices or instruments by mixing slightly delayed copies of the input signal with the original. This effect creates a richer, fuller sound, often used to enhance vocals or instruments.
+
+Delay: The delay time applied to the duplicated signal.
+Modulation Rate and Range: Controls the speed and depth of delay modulation, giving the chorus effect its characteristic "wobble."
+Wet/Dry Mix: Blends the processed signal with the original audio.
+Code Explanation
+
+Process(double* frameIn, double* frameOut): Applies a time-variant delay to create the chorus effect. The delay time (m_delay) is modulated using a sine function to simulate variations in pitch, and the delayed and original signals are blended based on the wet/dry levels.
+XmlLoad(IXMLDOMNode* xml): Reads XML settings to control delay, modulation range, modulation rate, and wet/dry mix, giving the user flexibility over the chorus sound.
+Supported Grading Elements
+
+30 - 3 Effects: Chorus is a required effect among the list of three or more.
+40 - Controllable effects send: The delay, modulation range, modulation rate, and wet/dry mix are configurable.
+Component: Noise Gating
+Description of Functionality
+
+The Noise Gating component is designed to suppress audio signals below a certain threshold. It’s commonly used to reduce unwanted background noise or to create an "open/close" effect for certain sound levels. When the signal falls below the threshold, the output level is reduced.
+
+Threshold: Controls the minimum signal level required to pass through the gate.
+Gate Gain: The gain level gradually decreases when the signal is below the threshold, and increases when it’s above the threshold, allowing for smooth transitions.
+Wet/Dry Mix: Controls the balance between the gated and original signals.
+Code Explanation
+
+Process(double* frameIn, double* frameOut): This function reduces the audio level when it falls below the threshold. The gate gain (m_gateL and m_gateR) is dynamically adjusted based on the input signal. Wet/dry mix allows control over how much of the gated signal is heard.
+XmlLoad(IXMLDOMNode* xml): Reads XML settings for the threshold, wet/dry mix, and adjusts gating sensitivity.
+Supported Grading Elements
+
+30 - 3 Effects: Noise gating is included among the three required effects.
+40 - Controllable effects send: Threshold and wet/dry mix settings provide control over the gating effect.
+50 - 4 Effects	✔️	All four effects (Compression, Flanging, Chorus, Noise Gating) are implemented.
+
+
+
+
+
+
+
