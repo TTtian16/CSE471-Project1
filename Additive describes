@@ -36,5 +36,31 @@ This component was developed by Xinyu Tian.
 
 
 
+Section 1 - AdditiveSynth with Chorus Effect
+Instrument: <instrument instrument="AdditiveSynth" chorus="1">
+Four notes (C4, E4, G4, C5) demonstrate the Chorus effect.
+Effect Settings:
+<instrument instrument="Chorus">
+delay="0.3", wet="0.6", dry="0.4", range="0.4", rate="1.5"
+Section 2 - AdditiveSynth with Flange Effect
+Instrument: <instrument instrument="AdditiveSynth" flange="1">
+Four notes (D4, F4, A4, D5) demonstrate the Flange effect.
+Effect Settings:
+<instrument instrument="Flange">
+delay="0.015", wet="0.65", dry="0.35", range="0.45", rate="1.8", level="1.5"
+Section 3 - AdditiveSynth with Noise Gate Effect
+Instrument: <instrument instrument="AdditiveSynth" noisegate="1">
+Four notes (E4, G4, B4, E5) demonstrate the Noise Gate effect.
+Effect Settings:
+<instrument instrument="NoiseGate">
+threshold="40", wet="0.9", dry="0.1"
+Section 4 - AdditiveSynth with Compressor Effect
+Instrument: <instrument instrument="AdditiveSynth" compression="1">
+Four notes (F4, A4, C5, F5) demonstrate the Compressor effect.
+Effect Settings:
+<instrument instrument="Compressor">
+threshold="8", wet="0.85", dry="0.15", ratio="3"
+
+
 
 
