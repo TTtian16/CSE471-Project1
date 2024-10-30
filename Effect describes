@@ -72,6 +72,29 @@ Supported Grading Elements
 
 
 
-
+Section 1 (Measure 1):
+Goal: Create a layered sound using harmonics on notes C4, E4, and G4.
+Details: Each note has a short crossfade for smooth entry and exit, with moderate harmonic amplitudes to balance the tones.
+Section 2 (Measure 2):
+Goal: Experiment with a fast ADSR envelope on notes D4, F4, and A4.
+Details: Shorter attack and decay, followed by a moderate sustain and release, giving these notes a quick, percussive feel.
+Section 3 (Measure 3):
+Goal: Introduce vibrato for a subtle modulation effect.
+Details: Notes E4 and G4 have vibrato settings (vibrato="5.0 1.5") for a gentle pitch modulation, creating a richer sound.
+Section 4 (Measure 4):
+Goal: Use a strong attack and long release for resonance.
+Details: Notes B4 and D5 have longer attack and release times (ADSR="0.4 0.2 0.9 0.5"), creating a sustained, resonant sound.
+Section 5 (Measure 5):
+Goal: Experiment with higher vibrato frequency and depth.
+Details: Notes G4 and F#4 have increased vibrato values (vibrato="6.0 2.0") for a more pronounced pitch modulation.
+Section 6 (Measure 6):
+Goal: Achieve a softer sound using lower ADSR sustain.
+Details: Notes E5 and G5 have reduced sustain levels in the ADSR envelope (ADSR="0.2 0.2 0.6 0.3"), giving them a gentler presence.
+Section 7 (Measure 7):
+Goal: Smoother transitions using longer crossfade times.
+Details: Notes A4 and C5 feature a longer crossfade (crossFadeIn="0.25", crossFadeOut="0.25") for seamless transitions.
+Section 8 (Measure 8):
+Goal: Create a layered effect with simultaneous notes.
+Details: Notes D4, F4, and A4 are played together with overlapping durations and ADSR settings, producing a full, multi-layered sound.
 
 
