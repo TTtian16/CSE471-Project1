@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<score bpm="120" beatspermeasure="4">
+
+    <!-- Section 1: Demonstrates the "AdditiveSynth" synthesis with Chorus effect -->
+    <instrument instrument="AdditiveSynth" chorus="1">
+        <note measure="1" beat="1" duration="1" note="C4" amplitudes="1 0.5 0.3 0.2"/>
+        <note measure="1" beat="2" duration="1" note="E4" amplitudes="1 0.4 0.2 0.1"/>
+        <note measure="1" beat="3" duration="1" note="G4" amplitudes="1 0.5 0.3 0.2"/>
+        <note measure="1" beat="4" duration="1" note="C5" amplitudes="1 0.6 0.4 0.3"/>
+    </instrument>
+
+    <!-- Chorus Effect Settings (adjusted) -->
+    <instrument instrument="Chorus">
+        <note delay="0.3" wet="0.6" dry="0.4" range="0.4" rate="1.5"/>
+    </instrument>
+
+    <!-- Section 2: Demonstrates the "AdditiveSynth" synthesis with Flange effect -->
+    <instrument instrument="AdditiveSynth" flange="1">
+        <note measure="2" beat="1" duration="1" note="D4" amplitudes="1 0.3 0.2 0.1"/>
+        <note measure="2" beat="2" duration="1" note="F4" amplitudes="1 0.4 0.3 0.2"/>
+        <note measure="2" beat="3" duration="1" note="A4" amplitudes="1 0.5 0.4 0.3"/>
+        <note measure="2" beat="4" duration="1" note="D5" amplitudes="1 0.6 0.5 0.4"/>
+    </instrument>
+
+    <!-- Flange Effect Settings (adjusted) -->
+    <instrument instrument="Flange">
+        <note delay="0.015" wet="0.65" dry="0.35" range="0.45" rate="1.8" level="1.5"/>
+    </instrument>
+
+    <!-- Section 3: Demonstrates the "AdditiveSynth" synthesis with Noise Gate effect -->
+    <instrument instrument="AdditiveSynth" noisegate="1">
+        <note measure="3" beat="1" duration="1" note="E4" amplitudes="1 0.2 0.1 0.05"/>
+        <note measure="3" beat="2" duration="1" note="G4" amplitudes="1 0.3 0.2 0.1"/>
+        <note measure="3" beat="3" duration="1" note="B4" amplitudes="1 0.4 0.3 0.15"/>
+        <note measure="3" beat="4" duration="1" note="E5" amplitudes="1 0.5 0.4 0.2"/>
+    </instrument>
+
+    <!-- Noise Gate Effect Settings (adjusted) -->
+    <instrument instrument="NoiseGate">
+        <note threshold="40" wet="0.9" dry="0.1"/>
+    </instrument>
+
+    <!-- Section 4: Demonstrates the "AdditiveSynth" synthesis with Compressor effect -->
+    <instrument instrument="AdditiveSynth" compression="1">
+        <note measure="4" beat="1" duration="1" note="F4" amplitudes="1 0.4 0.3 0.2"/>
+        <note measure="4" beat="2" duration="1" note="A4" amplitudes="1 0.5 0.4 0.3"/>
+        <note measure="4" beat="3" duration="1" note="C5" amplitudes="1 0.6 0.5 0.4"/>
+        <note measure="4" beat="4" duration="1" note="F5" amplitudes="1 0.7 0.6 0.5"/>
+    </instrument>
+
+    <!-- Compressor Effect Settings (adjusted) -->
+    <instrument instrument="Compressor">
+        <note threshold="8" wet="0.85" dry="0.15" ratio="3"/>
+    </instrument>
+
+</score>
+
+

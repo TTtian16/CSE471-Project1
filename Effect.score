@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<score bpm="120" beatspermeasure="4">
+
+    <!-- Demonstrating AdditiveSynth with unique parameter variations -->
+
+    <instrument instrument="AdditiveSynth">
+        <!-- Using different frequencies and amplitudes to create a layered sound -->
+        <note measure="1" beat="1" duration="0.5" crossFadeIn="0.1" crossFadeOut="0.1" amplitudes="1 0.7 0.5" note="C4"/>
+        <note measure="1" beat="1.5" duration="0.5" crossFadeIn="0.1" crossFadeOut="0.1" amplitudes="1 0.7 0.5" note="E4"/>
+        <note measure="1" beat="2" duration="0.5" crossFadeIn="0.1" crossFadeOut="0.1" amplitudes="1 0.8 0.6" note="G4"/>
+
+        <!-- Experimenting with a quick ADSR envelope -->
+        <note measure="2" beat="1" duration="0.4" ADSR="0.1 0.2 0.7 0.5" amplitudes="1 0.6 0.3" note="D4"/>
+        <note measure="2" beat="1.4" duration="0.4" ADSR="0.1 0.2 0.7 0.5" amplitudes="1 0.6 0.3" note="F4"/>
+        <note measure="2" beat="1.8" duration="0.4" ADSR="0.1 0.2 0.7 0.5" amplitudes="1 0.6 0.3" note="A4"/>
+
+        <!-- Adding vibrato for a subtle modulation effect -->
+        <note measure="3" beat="1" duration="1" ADSR="0.05 0.1 1.0 0.4" amplitudes="1 0.6 0.4 0.3" note="E4" vibrato="5.0 1.5"/>
+        <note measure="3" beat="2" duration="1" ADSR="0.05 0.1 1.0 0.4" amplitudes="1 0.5 0.3 0.2" note="G4" vibrato="5.0 1.5"/>
+
+        <!-- Creating a strong attack and long release for a resonant sound -->
+        <note measure="4" beat="1" duration="1.2" ADSR="0.4 0.2 0.9 0.5" amplitudes="1 0.8 0.6 0.5" note="B4"/>
+        <note measure="4" beat="2.5" duration="1.2" ADSR="0.4 0.2 0.9 0.5" amplitudes="1 0.8 0.6 0.5" note="D5"/>
+
+        <!-- Experimenting with vibrato frequency and amplitude changes -->
+        <note measure="5" beat="1" duration="1" ADSR="0.1 0.3 0.8 0.4" amplitudes="1 0.7 0.5" note="G4" vibrato="6.0 2.0"/>
+        <note measure="5" beat="2" duration="1" ADSR="0.1 0.3 0.8 0.4" amplitudes="1 0.7 0.5" note="F#4" vibrato="6.0 2.0"/>
+        
+        <!-- Lower ADSR sustain for softer notes -->
+        <note measure="6" beat="1" duration="0.7" ADSR="0.2 0.2 0.6 0.3" amplitudes="1 0.5 0.3" note="E5"/>
+        <note measure="6" beat="1.7" duration="0.7" ADSR="0.2 0.2 0.6 0.3" amplitudes="1 0.5 0.3" note="G5"/>
+
+        <!-- Longer notes with slower crossfade for smoother transitions -->
+        <note measure="7" beat="1" duration="1.5" crossFadeIn="0.25" crossFadeOut="0.25" amplitudes="1 0.6 0.4 0.3" note="A4"/>
+        <note measure="7" beat="2.5" duration="1.5" crossFadeIn="0.25" crossFadeOut="0.25" amplitudes="1 0.6 0.4 0.3" note="C5"/>
+
+        <!-- Creating a layered effect with multiple notes -->
+        <note measure="8" beat="1" duration="1.5" ADSR="0.05 0.05 1.0 0.2" amplitudes="1 0.8 0.6" note="D4"/>
+        <note measure="8" beat="1" duration="1.5" ADSR="0.05 0.05 1.0 0.2" amplitudes="1 0.7 0.5" note="F4"/>
+        <note measure="8" beat="1" duration="1.5" ADSR="0.05 0.05 1.0 0.2" amplitudes="1 0.6 0.4" note="A4"/>
+    </instrument>
+
+</score>
